@@ -10,6 +10,7 @@ export const TEXT = {
   samples: "Try:",
   queue: "Review queue",
   evidence: "Evidence",
+  run: "The run",
   idle: "Enter a public repository to rank its open pull requests.",
   idleEvidence: "Select a pull request to see how each check was judged.",
   empty: "This repository has no open pull requests.",

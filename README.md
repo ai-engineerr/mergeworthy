@@ -78,18 +78,18 @@ A scan of 20 PRs costs about 22 GitHub requests, so an unauthenticated session a
 
 ## Measured
 
-One sample, run on 2026-09-21 against `expressjs/express` (20 open PRs, no CONTRIBUTING file), from one machine.
-Treat it as an example, not a benchmark.
+Three runs on 2026-09-21 against `expressjs/express` (20 open PRs, no CONTRIBUTING file), from one machine.
+Treat these as an example, not a benchmark.
 
 | | Result |
 |---|---|
-| Jev latency per PR | 1.05–1.38s, with all 20 PRs in flight at once (two runs) |
-| Whole scan, Jev portion | ~1.4s (the slowest PR, since they run in parallel) |
+| Jev latency per PR | Average 1.20–1.47s across three runs, with all 20 PRs in flight at once |
+| Whole scan, Jev portion | About the slowest PR's latency (1.4–1.6s), since they run in parallel |
 | GitHub fetch | 0.46–1.74s |
 | Input per PR | ~1,000–2,300 tokens |
 | Cost for 20 PRs | ~$0.0012 |
-| Off-schema answers | 0 of 20 PRs, in both runs |
-| Verdicts | 8 ready, 12 changes, 0 low value (both runs, same split) |
+| Off-schema answers | 0 of 20 PRs, in all three runs |
+| Verdicts | 8 ready, 12 changes, 0 low value (all three runs, same split) |
 
 Spot-checks agreed with the verdicts: an empty-description PR was flagged for its description, and small
 changes to `lib/` with no tests were flagged for missing tests. Per-PR latency here is higher than for a single

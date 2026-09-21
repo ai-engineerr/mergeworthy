@@ -1,16 +1,19 @@
-/* Light surface, one ink. Colour is reserved for verdicts, and each verdict colour meets 4.5:1 on white. */
+/*
+ * Paper, ink and one highlighter. Cream page, hard black outlines, monospace throughout, and yellow
+ * only where a number or verdict deserves the eye. Every text colour meets 4.5:1 on its background.
+ */
 :root {
-  --bg: #f6f7f9;
+  --bg: #f4f1ea;
   --panel: #ffffff;
-  --raised: #eef0f3;
-  --line: #dcdfe4;
-  --ink: #16191d;
-  --dim: #5b6470;
-  --ready: #17784a;
-  --changes: #9a5b00;
-  --low: #c0262f;
-  --look: #2a58c9;
-  --focus: #2a58c9;
+  --raised: #ece8de;
+  --wash: #dcd8cf;
+  --rule: #d8d5cc;
+  --ink: #111111;
+  --dim: #6b6b64;
+  --grey: #8d8b84;
+  --yel: #f2c230;
+  --red: #c23a2a;
+  --mono: "JetBrains Mono", "Space Mono", ui-monospace, "SF Mono", Consolas, Menlo, monospace;
 
   color-scheme: light;
 }
@@ -27,8 +30,9 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--ink);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.45;
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -39,6 +43,10 @@ input {
 }
 
 :focus-visible {
-  outline: 2px solid var(--focus);
+  outline: 3px solid var(--ink);
   outline-offset: 2px;
+}
+
+::selection {
+  background: var(--yel);
 }

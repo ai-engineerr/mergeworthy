@@ -95,7 +95,10 @@ export function GateView() {
           ) : (
             <div className={styles.columns}>
               <section aria-labelledby="queue-heading">
-                <h2 id="queue-heading">{TEXT.queue}</h2>
+                <h2 id="queue-heading">
+                  <span className={styles.tag}>01</span>
+                  <span>{TEXT.queue}</span>
+                </h2>
                 <PullQueue
                   pulls={state.pulls}
                   decisions={state.decisions}
@@ -104,7 +107,10 @@ export function GateView() {
                 />
               </section>
               <section className={styles.sticky} aria-labelledby="evidence-heading" aria-live="polite">
-                <h2 id="evidence-heading">{TEXT.evidence}</h2>
+                <h2 id="evidence-heading">
+                  <span className={styles.tag}>02</span>
+                  <span>{TEXT.evidence}</span>
+                </h2>
                 {shownPull ? (
                   <Evidence
                     pull={shownPull}
@@ -119,28 +125,34 @@ export function GateView() {
           )}
 
           {state.metrics ? (
-            <dl className={styles.metrics}>
-              <div>
-                <dt>{TEXT.metrics.pulls}</dt>
-                <dd>{state.metrics.pulls}</dd>
+            <section className={styles.run} aria-label={TEXT.run}>
+              <div className={styles.runBar}>
+                <span>{TEXT.run}</span>
+                <span>{state.repo}</span>
               </div>
-              <div>
-                <dt>{TEXT.metrics.latency}</dt>
-                <dd>{formatMs(state.metrics.averageMs)}</dd>
-              </div>
-              <div>
-                <dt>{TEXT.metrics.cost}</dt>
-                <dd>{formatUsd(state.metrics.costUsd)}</dd>
-              </div>
-              <div>
-                <dt>{TEXT.metrics.github}</dt>
-                <dd>{formatMs(state.metrics.githubMs)}</dd>
-              </div>
-              <div>
-                <dt>{TEXT.metrics.schema}</dt>
-                <dd>{state.metrics.typeErrors}</dd>
-              </div>
-            </dl>
+              <dl className={styles.metrics}>
+                <div>
+                  <dt>{TEXT.metrics.pulls}</dt>
+                  <dd>{state.metrics.pulls}</dd>
+                </div>
+                <div>
+                  <dt>{TEXT.metrics.latency}</dt>
+                  <dd>{formatMs(state.metrics.averageMs)}</dd>
+                </div>
+                <div>
+                  <dt>{TEXT.metrics.cost}</dt>
+                  <dd>{formatUsd(state.metrics.costUsd)}</dd>
+                </div>
+                <div>
+                  <dt>{TEXT.metrics.github}</dt>
+                  <dd>{formatMs(state.metrics.githubMs)}</dd>
+                </div>
+                <div>
+                  <dt>{TEXT.metrics.schema}</dt>
+                  <dd>{state.metrics.typeErrors}</dd>
+                </div>
+              </dl>
+            </section>
           ) : null}
         </>
       ) : null}
