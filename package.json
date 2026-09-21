@@ -1,0 +1,30 @@
+{
+  "name": "mergeworthy",
+  "version": "0.1.0",
+  "description": "Rank a repository's open pull requests by how ready they are for review, using fast structured judgments from TypeSafe Jev.",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=22.15"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "check": "node --experimental-strip-types --import ./scripts/aliasHook.mjs scripts/check.ts"
+  },
+  "dependencies": {
+    "next": "16.3.5",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.5",
+    "typescript": "^5"
+  }
+}
