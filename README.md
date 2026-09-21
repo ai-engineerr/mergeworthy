@@ -10,6 +10,11 @@ Built on [TypeSafe](https://docs.typesafe.ai) Jev, a System One model: it return
 probabilities and cannot generate text. That is the point. A tool that summarises or reviews with an LLM can
 invent things about someone's contribution. Jev can only answer questions about the text it was handed.
 
+[![Mergeworthy walkthrough: an LLM answers with free text, Mergeworthy answers with scored checks, then ranks a queue of 20 PRs](docs/media/mergeworthy-explainer-poster.png)](docs/media/mergeworthy-explainer.mp4)
+
+▶ **[Watch the 52-second walkthrough](docs/media/mergeworthy-explainer.mp4)** (silent MP4). The numbers come from one
+real run; the animation itself is schematic.
+
 ## What it does
 
 Enter `owner/repo` (or a github.com URL). Mergeworthy fetches the open PRs, asks Jev a handful of questions about each,
