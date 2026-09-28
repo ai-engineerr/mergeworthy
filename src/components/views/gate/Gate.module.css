@@ -203,6 +203,11 @@
   background: var(--raised);
 }
 
+.row:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
 .row[aria-pressed="true"] {
   background: var(--panel);
   box-shadow: 4px 4px 0 var(--ink);
